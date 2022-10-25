@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CSVDataReader {
-    public static void main(String[] args) {
+    public ArrayList<CSVData> retrieveCSVData() {
 
-        final String path = "directory where csv is present eg: C:/Users/example/Downloads/test.csv";
+        final String path = getClass().getResource("/test.csv").toString();
         String line = "";
         ArrayList<CSVData> listOfData = new ArrayList<>();
 
@@ -26,6 +26,6 @@ public class CSVDataReader {
             e.printStackTrace();
         }
 
-        System.out.println(listOfData.get(0));
+        return listOfData;
     }
 }

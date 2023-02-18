@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableCellRenderer;
 
-public class TextAreaCellRenderer extends JTextArea implements TableCellRenderer  {
+public class TextAreaCellRenderer extends JTextArea implements TableCellRenderer {
 
     private final List<List<Integer>> rowAndCellHeights = new ArrayList<>();
     private final HoverIndex hoverRow;
@@ -27,13 +27,17 @@ public class TextAreaCellRenderer extends JTextArea implements TableCellRenderer
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         setText(Objects.toString(value, ""));
         adjustRowHeight(table, row, column);
-        if (row == hoverRow.getIndex()) {
-            setBackground(new Color(230, 230, 230));
+        if (isSelected) {
+            setBackground(table.getSelectionBackground());
         } else {
-            if (row % 2 == 0) {
-                setBackground(Color.WHITE);
+            if (row == hoverRow.getIndex()) {
+                setBackground(new Color(230, 230, 230));
             } else {
-                setBackground(new Color(242, 242, 242));
+                if (row % 2 == 0) {
+                    setBackground(Color.WHITE);
+                } else {
+                    setBackground(new Color(242, 242, 242));
+                }
             }
         }
         return this;

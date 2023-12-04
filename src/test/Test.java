@@ -1,6 +1,7 @@
 package test;
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import table.TableCustom;
@@ -12,6 +13,9 @@ public class Test extends javax.swing.JFrame {
         getContentPane().setBackground(Color.WHITE);
         TableCustom.apply(jScrollPane1, TableCustom.TableType.MULTI_LINE);
         testData(jTable1);
+
+        jTable1.getTableHeader().setFont(new Font("", Font.BOLD, 15));
+        jTable1.setFont(new Font("", Font.BOLD, 10));
     }
 
     private void testData(JTable table) {

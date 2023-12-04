@@ -19,6 +19,7 @@ public class TableHeaderCustomCellRender extends DefaultTableCellRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         Component com = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         setBorder(new EmptyBorder(8, 10, 8, 10));
+        com.setFont(table.getTableHeader().getFont());
         com.setBackground(table.getTableHeader().getBackground());
         return com;
     }

@@ -31,6 +31,7 @@ public class TableCustomCellRender extends DefaultTableCellRenderer {
                 }
             }
         }
+        com.setFont(table.getFont());
         return com;
     }
 }

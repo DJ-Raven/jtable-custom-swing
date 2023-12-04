@@ -40,6 +40,7 @@ public class TextAreaCellRenderer extends JTextArea implements TableCellRenderer
                 }
             }
         }
+        setFont(table.getFont());
         return this;
     }
 

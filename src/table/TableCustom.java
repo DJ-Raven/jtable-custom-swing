@@ -28,6 +28,7 @@ public class TableCustom {
             cellRender = new TextAreaCellRenderer(hoverRow);
         }
         table.setDefaultRenderer(Object.class, cellRender);
+        table.setDefaultRenderer(Boolean.class, new BooleanCellRenderer(hoverRow));
         table.setShowVerticalLines(true);
         table.setGridColor(new Color(220, 220, 220));
         table.setForeground(new Color(51, 51, 51));
